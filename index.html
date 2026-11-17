@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101827"><meta name="description" content="Crea, copia y guarda prompts para imágenes, videos, ChatGPT y negocios.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<title>PromptMaker AI</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="brand"><div class="logo">✦</div><div><h1>PromptMaker AI</h1><p>Tu taller de ideas e instrucciones</p></div></div><span class="tag">GRATIS</span></header>
+<main>
+<section class="intro"><h2>Convierte tus ideas en prompts</h2><p>Describe lo que tienes en mente. La aplicación organiza tu idea en una instrucción clara y lista para copiar.</p></section>
+<nav class="tabs"><button class="tab active" data-tab="crear">✍️ Crear prompt</button><button class="tab" data-tab="guardados">♡ Guardados <span id="savedCount">0</span></button></nav>
+<section id="crear" class="panel">
+<div class="aiConfig"><label for="apiUrl">Conexión segura con Gemini</label><input id="apiUrl" type="url" placeholder="Pega aquí la URL de tu servicio seguro (Worker)"><small>La clave de Google no se coloca aquí; permanece protegida en el servidor.</small></div><label for="category">¿Para qué necesitas el prompt?</label>
+<select id="category">
+<option value="imagen">🖼️ Crear imágenes</option><option value="video">🎬 Crear videos</option><option value="chatgpt">🤖 ChatGPT / asistente</option><option value="marketing">📣 Marketing y publicidad</option><option value="redes">📱 Redes sociales</option><option value="negocio">💼 Negocios y emprendimiento</option><option value="diseno">🎨 Diseño y logos</option><option value="educacion">📚 Educación y aprendizaje</option><option value="fotografia">📷 Fotografía profesional</option><option value="otro">✨ Otro propósito</option>
+</select>
+<label for="idea">Describe tu idea</label><textarea id="idea" rows="4" placeholder="Ejemplo: Quiero una imagen de tres perros callejeros en una calle de Brasil, con ambiente cinematográfico y gracioso..."></textarea>
+<div class="grid2"><div><label for="style">Estilo o tono</label><select id="style"><option>Profesional</option><option>Realista y detallado</option><option>Cinematográfico</option><option>Creativo y original</option><option>Elegante y moderno</option><option>Divertido y jocoso</option><option>Emotivo</option><option>Educativo y claro</option><option>Comercial y persuasivo</option></select></div>
+<div><label for="detail">Nivel de detalle</label><select id="detail"><option value="completo">Completo</option><option value="breve">Breve</option><option value="experto">Muy detallado</option></select></div></div>
+<div id="imageOptions" class="extra"><label for="aspect">Formato (para imágenes y videos)</label><select id="aspect"><option>Vertical 9:16 (TikTok / Reels / Shorts)</option><option>Cuadrado 1:1</option><option>Horizontal 16:9</option><option>Retrato 4:5</option><option>Libre / según convenga</option></select></div>
+<button id="generate" class="primary">✦ Crear con inteligencia artificial</button>
+<div id="resultWrap" class="result hidden"><div class="resultHead"><h3>Tu prompt está listo</h3><span class="ready">GENERADO</span></div><textarea id="result" rows="10" readonly></textarea><div class="actions"><button id="copy" class="primary">Copiar prompt</button><button id="save" class="secondary">♡ Guardar</button></div><p id="notice" class="notice" aria-live="polite"></p></div>
+</section>
+<section id="guardados" class="panel hidden"><div class="savedHead"><div><h2>Mis prompts guardados</h2><p>Se almacenan en este dispositivo.</p></div><button id="clearSaved" class="textBtn">Borrar todos</button></div><div id="savedList" class="savedList"><p class="empty">Todavía no has guardado prompts.</p></div></section>
+</main>
+<footer>PromptMaker AI · Funciona sin cuenta y guarda tus prompts en este dispositivo.</footer>
+<script src="app.js"></script>
+</body></html>
